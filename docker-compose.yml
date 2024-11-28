@@ -15,6 +15,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: ${DOCKER_USERNAME}/devops-lab2-backend:latest
     container_name: backend
     restart: always
     ports:
@@ -22,7 +23,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      - MONGO_URL=mongodb://mongodb:27017/reverse_todo
+      - MONGO_URL=mongodb+srv://salahboughanmi:qzEO7iQxG64B6NOY@devo.danpz.mongodb.net/?retryWrites=true&w=majority&appName=devo
     networks:
       - app-network
 
@@ -32,6 +33,7 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_API_URL: http://localhost:3001
+    image: ${DOCKER_USERNAME}/devops-lab2-frontend:latest
     container_name: frontend
     restart: always
     ports:
