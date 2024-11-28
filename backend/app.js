@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 //qzEO7iQxG64B6NOY
+// try yfchvczdhvczdjkc
 const mongoURI = process.env.MONGO_URL || "mongodb+srv://salahboughanmi:qzEO7iQxG64B6NOY@devo.danpz.mongodb.net/?retryWrites=true&w=majority&appName=devo";
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
